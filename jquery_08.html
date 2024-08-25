@@ -6,14 +6,26 @@
     <script src="jquery-3.7.1.min.js"></script>
     <title>Método Target</title>
     <style>
-        /*  */
+        .texto{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <p id="texto1">CFB Cursos</p>
-    <p id="texto2">Curso de JQuery</p>
+    <p id="texto1" class="texto">CFB Cursos</p>
+    <p id="texto2" class="texto">Curso de JQuery</p>
+    <p id="resultado"></p>
     <script>
-        // 
+        // $('#texto1').click((e)=>{ 
+        //     $('#resultado').text(`Objeto que foi clicado: ${e.target.textContent}`)
+        // });
+
+        $(document).click((e)=>{
+            $('#resultado').text(`Objeto clicado: ${e.target.id}`)
+            if(e.target.id == "resultado"){
+                alert('Resultado clicado!')
+            }
+        })
     </script>
 </body>
 </html>
