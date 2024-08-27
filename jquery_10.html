@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Como parar a propagação de um evento</title>
+    <style>
+        .texto{
+            cursor: pointer;
+        }
+        div{
+            background-color: green;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        p{
+            background-color: yellow;
+            border: 1px solid black;
+            border-radius: 10px;
+            /* margin: 10px; */
+            padding: 10px;
+            cursor: pointer;
+        }
+        span{
+            background-color: cornflowerblue;
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            CFB Cursos
+            <br></br>
+            <br></br>
+            <br></br>
+            <span>Curso de JQuery</span>
+        </p>
+    </div>
+
+
+
+    <script>
+        $('div').click(function () { 
+            alert('Evento disparado no div!')
+        });
+        $('p').click(function () { 
+            event.stopPropagation()
+            alert('Evento disparado no p!')
+        });
+        $('span').click(function () { 
+            event.stopPropagation()
+            alert('Evento disparado no span!')
+        });
+    </script>
+</body>
+</html>
