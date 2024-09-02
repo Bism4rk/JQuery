@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Métodos Siblings, Next, e Prev</title>
+</head>
+<body>
+    <h1>Comandos: siblings, next, prev, prevAll, nextAll, prevUntil, nextUntil</h1>
+    <div>
+        <span>
+            <h3>CFB Cursos</h3>
+            <p>Curso de JQuery</p>
+            <h2>Seletores Parent</h2>
+            <p>Seletores Siblings</p>
+        </span>
+    </div>
+    <script>
+        // $('h3').siblings('p').css('border', '1px solid red')
+        // $('p').next().css('border', '1px solid green')
+        // $('h2').prev().css('border', '1px solid blue')
+        $('h3').nextUntil('h2').css('border', '1px solid green')
+        $('p:last').prevUntil('p').css('border', '1px solid goldenrod')
+    </script>
+</body>
+</html>
