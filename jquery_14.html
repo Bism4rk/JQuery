@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Métodos de filtragem</title>
+    <style>
+        *{
+            background-color: purple;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>turner/flair '96 baybee!!!</p>
+    <h3>fuck that DINO casey and that nutjob mcmahon!!!</h3>
+    
+    <p>wcw >>>>> wwfraud!!!</p>
+    <h3>uhhhhhh</h3>
+    <p>also fuck newt gingrich</p>
+    <h3>CFB Cursos</h3>
+    <p>Curso JQuery</p>
+    <h3>youtube.com/@cfbcursos</h3>
+    <p>www.cfbcursos.com.br</p>
+    <h3>Filtrando elementos</h3>
+
+    <script>
+        $('p').first().css({border: '1px solid white', 'background-color': '#ce03ce'})
+        $('p').last().css({border: '1px solid black', 'background-color': 'rgb(39 237 0)', color:'black'})
+        $('p').eq(1).css({border: '1px solid gold', 'background-color': 'red'})
+        $('h3').eq(2).css({border: '1px solid white', 'background-color': 'blue'})
+    </script>
+</body>
+</html>
