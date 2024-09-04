@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Métodos de filtragem Parte 2</title>
+    <style>
+        *{
+            color: white;
+            background-color: black;
+        }
+        p{
+            background-color: #4798f5
+        }
+        h3{
+            background-color: red
+        }
+        .borda{
+            border: 2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>turner/flair '96 baybee!!!</p>
+    <h3>fuck that DINO casey and that nutjob mcmahon!!!</h3>
+    
+    <p class="borda">wcw >>>>> wwfraud!!!</p>
+    <h3>uhhhhhh</h3>
+    <p>also fuck newt gingrich</p>
+    <h3>CFB Cursos</h3>
+    <p class="borda">Curso JQuery</p>
+    <h3>youtube.com/@cfbcursos</h3>
+    <p>www.cfbcursos.com.br</p>
+    <h3>Filtrando elementos</h3>
+
+    <script> 
+        $('p').filter('.borda').css({'background-color': 'green', color: 'yellow'})
+        $('p').not('.borda').css({color: 'navy'})
+    </script>
+</body>
+</html>
