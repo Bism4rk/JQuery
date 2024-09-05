@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Obter e modificar valores dos elementos</title>
+    <style>
+        #caixa{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+        .vermelho{
+            background-color: red;
+        }
+        .azul{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa" class="vermelho">
+        <h3>CFB Cursos</h3>
+        <p>Curso de JQuery</p>
+    </div>
+    <br></br>
+    <button class="btn_azul">Azul</button>
+    <button class="btn_vermelho">Vermelho</button>
+    <script>
+        $('.btn_vermelho').click(function() { 
+            $('#caixa').attr('class', 'vermelho');
+        });
+        $('.btn_azul').click(function() { 
+            $('#caixa').attr('class', 'azul');
+        });
+    </script>
+</body>
+</html>
