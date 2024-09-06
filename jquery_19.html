@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Função Toggle</title>
+    <style>
+        .caixa{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #0062ff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa" class="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso de JQuery</p>
+    </div>
+    <br></br>
+    <button id="btn_mostrarocultar">Ocultar</button>
+    <script>
+        $('#btn_mostrarocultar').click(function() { 
+            $('#caixa').toggle();
+            if($('#caixa').is(':visible')){
+                $('#btn_mostrarocultar').text('Ocultar')
+            }
+            else{
+                $('#btn_mostrarocultar').text('Exibir')
+            }
+        });
+    </script>
+</body>
+</html>
