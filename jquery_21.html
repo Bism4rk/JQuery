@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Toggle na função</title>
+    <style>
+        .caixa{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #04327d;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa" class="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso de JQuery</p>
+    </div>
+
+    <button id="btn_tamanho">Diminuir / Aumentar</button>
+    <button id="btn_mostrar">Ocultar / Mostrar</button>
+    <script>
+        $('#btn_tamanho').click(function () { 
+            $('#caixa').animate({width: 'toggle', height: 'toggle'}, {duration: 2000})
+        });
+        $('#btn_mostrar').click(function () { 
+            $('#caixa').animate({opacity: 'toggle'}, {duration: 2000})
+        });
+    </script>
+</body>
+</html>
