@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Função Delay</title>
+    <style>
+        .caixa{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #04327d;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa" class="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso de JQuery</p>
+    </div>
+
+    <button id="btn_aumentar">Aumentar</button>
+    <button id="btn_diminuir">Diminuir</button>
+    <button id="btn_resetar">Resetar</button>
+    <button id="btn_mostrar">Ocultar / Mostrar</button>
+    <script>
+        $('#btn_aumentar').click(function (){
+            $('#caixa').delay(2000).animate({width: '500px'}).delay(3500).animate({height: '500px'})
+        })
+        $('#btn_diminuir').click(function () { 
+            $('#caixa').delay(3000).animate({width: '125px'}).delay(1500).animate({height: '125px'})
+        });
+        $('#btn_resetar').click(function () { 
+            $('#caixa').delay(1000).animate({width: '200px'}).delay(2500).animate({height: '200px'})
+        });
+        $('#btn_mostrar').click(function () { 
+            $('#caixa').animate({opacity: 'toggle'})
+        });
+    </script>
+</body>
+</html>
