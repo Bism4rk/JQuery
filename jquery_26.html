@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .caixa{
+            border: 1px solid rgb(2, 2, 103);;
+            background-color: blue; 
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <title>Função FINISH</title>
+</head>
+<body>
+    <p>
+        <button id="btnAumentar">Aumentar</button>
+        <button id="btnDiminuir">Diminuir</button>
+    </p>
+    <p>
+        <button id="btnFinalizar">Finalizar</button>
+    </p>
+
+    <div id="caixa" class="caixa">
+        <p style="color: white;">Caixa!</p>
+    </div>
+
+    <script>
+        $('#btnAumentar').click(function () { 
+            $('#caixa').animate({width: '600px', height: '600px'}, 5000)
+        });
+        $('#btnDiminuir').click(function () { 
+            $('#caixa').animate({width: '100px', height: '100px'}, 5000)
+        });
+        $('#btnFinalizar').click(function () { 
+            $('#caixa').finish()
+        });
+    </script>
+</body>
+</html>
