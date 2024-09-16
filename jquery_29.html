@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .menu{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+        #menus{
+            background-color: rgb(6, 132, 126);
+            display: flex;
+            width: 100%;
+        }
+        #controle{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(6, 132, 126);
+            padding: 5px;
+            border-radius: 0 0 10px 10px;
+            margin-left: 10px;
+            margin-right: auto;
+            color: white;
+        }
+        button{
+            border: none;
+            background-color: rgb(3, 62, 60);
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+    </style>
+    <title>Slide UP e DOWN</title>
+</head>
+<body>
+    <div id="menu" class="menu">
+        <div id="menus">
+            <button class="btnMenu">Home</button>
+            <button class="btnMenu">Cursos</button>
+            <button class="btnMenu">Material</button>
+            <button class="btnMenu">Contatos</button>
+            <button class="btnMenu">Sobre</button>
+        </div>
+        <div id="controle">
+            <button class="btnMenu">Menu</button>
+            <p id="msg">Exibindo menu!</p>
+        </div>
+    </div>
+
+    <script>
+        $('.btnMenu').click(function () { 
+            $('#menus').slideToggle(500, ()=>{
+                if($('#menus').is(':visible')){
+                    $('#msg').text('Exibindo menu!')
+                }else{
+                    $('#msg').text('Ocultando menu!')
+                }
+            })
+        });
+    </script>
+</body>
+</html>
