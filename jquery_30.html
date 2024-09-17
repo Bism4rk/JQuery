@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .caixa{
+            background-color: rgb(0, 8, 126);   
+            color: white;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            top: 50px;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Função STOP</title>
+</head>
+<body>
+    <button id="btnAnimar">Animar</button>
+    <button id="btnProxima">Próxima</button>
+    <button id="btnParar">Parar</button>
+    <button id="btnFim">Fim</button>
+
+    <div id="caixa" class="caixa">THE BOX</div>
+
+    <script>
+        $('#btnAnimar').click(function() { 
+            $('#caixa').animate({left: "90vw"}, {duration: 2000})
+            $('#caixa').animate({top: "400px"}, {duration: 2000})
+            $('#caixa').animate({left: 0}, {duration: 2000})
+            $('#caixa').animate({top: 50}, {duration: 2000})
+        });
+        $('#btnProxima').click(function() { 
+            $('#caixa').stop()
+        });
+        $('#btnParar').click(function() { 
+            $('#caixa').stop(true) // clearQueue?
+        });
+        $('#btnFim').click(function() { 
+            $('#caixa').stop(false, true) // jumpToEnd?
+        });
+    </script>
+</body>
+</html>
