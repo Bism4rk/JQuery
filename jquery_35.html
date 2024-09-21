@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .caixa{
+            background-color: #bbb;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .subcaixa{
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+        }
+    </style>
+    <title>Manipulando Propriedades CSS</title>
+</head>
+<body>
+    <p>
+        <button id="btnVerde">Verde</button>
+        <button id="btnVermelho">Vermelho</button>
+        <button id="btnAzul">Azul</button>
+
+    </p>
+
+    <div id="caixa" class="caixa">
+        <div id="d0" class="subcaixa" style="background-color: white;">0</div>
+    </div>
+
+
+    <script>
+        $('#btnVerde').click(function(){
+            $('.subcaixa').css({"background-color":"green", "color":"white"})
+            alert($(".subcaixa").css('background-color'))
+        })
+        $('#btnVermelho').click(function(){
+            $('.subcaixa').css({"background-color":"red", "color":"white"})
+            alert($(".subcaixa").css('background-color'))
+        })
+        $('#btnAzul').click(function(){
+            $('.subcaixa').css({"background-color":"blue", "color":"white"})
+            alert($(".subcaixa").css('background-color'))
+        })
+    </script>
+</body>
+</html>
