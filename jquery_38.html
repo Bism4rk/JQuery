@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .caixa{
+            border: 3px solid black;
+            background-color: #bbb;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        #repositorio{
+            background-color: lightblue;
+            height: 100%;
+        }
+    </style>
+    <title>Função Clone</title>
+</head>
+<body>
+    <p>
+        <button id="btnClonar">Clonar</button>
+    </p>
+
+    <div id="caixa" class="caixa">
+        <h2>CFB Cursos - Curso de JQuery </h2>
+    </div>
+
+    <div id="repositorio" class="caixa"></div>
+
+    <script>
+        $('#btnClonar').click(function(){
+            $("#caixa").clone().appendTo('#repositorio')
+        });
+    </script>
+</body>
+</html>
