@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .caixas{
+            display: flex;
+            width: 100%;
+        }
+        .caixa{
+            border: 1px solid black;
+            background-color: #bbb;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-right: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        .btnFechar{
+            background-color: #800;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .ocultar{
+            display: none;
+        }
+    </style>
+    <title>Função hasClass</title>
+</head>
+<body>
+    <p>
+        <button id="btnReset">Reset</button>
+    </p>
+
+    <div id="caixas" class="caixas">
+        <div id="caixa1" class="caixa" style="background-color: #f00;">
+            <button class="btnFechar" id="btnFechar1">X</button>
+        </div>
+        <div id="caixa2" class="caixa" style="background-color: #080;">
+            <button class="btnFechar" id="btnFechar2">X</button>
+        </div>
+        <div id="caixa3" class="caixa" style="background-color: #008;">
+            <button class="btnFechar" id="btnFechar3">X</button>
+        </div>
+        <div id="caixa4" class="caixa" style="background-color: #880;">
+            <button class="btnFechar" id="btnFechar4">X</button>
+        </div>
+        <div id="caixa5" class="caixa" style="background-color: #088;">
+            <button class="btnFechar" id="btnFechar5">X</button>
+        </div>
+    </div>
+
+    <script>
+        $('.btnFechar').click(function(e){
+            $(`#${e.target.id}`).parent().addClass('ocultar')
+        })
+        $('#btnReset').click(function(){
+            let itens = $('.caixa')
+            for (let i = 0; i < itens.length; i++) {
+                if ($(itens[i]).hasClass('ocultar')) {
+                    $(itens[i]).removeClass('ocultar')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
