@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Função Offset</title>
+    <style>
+        .caixa{
+            border: 1px solid black;
+            background-color: #bbb;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-right: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button id="btnPosicao">Posição</button>
+        <br></br>
+        <label>Topo:</label>
+        <input type="range" name="top" id="top" min="0" max="500">
+        <label>Left:</label>
+        <input type="range" name="left" id="left" min="0" max="500">
+    </p>
+
+    <div class="caixa" id="caixa" style="position: absolute; top: 100px; left: 100px; background-color: rgb(3, 93, 228);"></div>
+    
+
+    <script>
+        $('#btnPosicao').click(function(){
+            let pt = $('#caixa').position().top
+            let pl = $('#caixa').position().left
+            let ot = $('#caixa').offset().top
+            let ol = $('#caixa').offset().left
+            alert(`Top: ${ot} // Left: ${ol}`)
+        })
+        $('#top').change(function (e) { 
+            let valor = document.getElementById(e.target.id).value
+            $('#caixa').offset({"top": valor})
+        });
+        $('#left').change(function (e) { 
+            let valor = document.getElementById(e.target.id).value
+            $('#caixa').offset({"left": valor})
+        });
+    </script>
+</body>
+</html>
