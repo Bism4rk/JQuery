@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Replace All e Replace With</title>
+    <style>
+        .cor{
+            color: blue;
+        }
+        .menu{
+            display: flex;
+            flex-direction: column;
+        }
+        #texto{
+            border: 1px solid black;
+            width: 100px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button id="bt_rolar_left">Rolar left</button>
+        <button id="bt_rolar_top">Rolar top</button>
+        <button id="bt_posicao_left">Posição left</button>
+        <button id="bt_posicao_top">Posição top</button>
+        <button id="bt_reset_pos">Resetar posição</button>
+
+    </div>
+
+    <div id="texto">
+        CFB Cursos, curso de JQuery, não deixe de conferir o nosso site e baixar todas as apostilas, confire também todos os posts com dicas e tutoriais! 123456789123456789123456789
+        CFB Cursos, curso de JQuery, não deixe de conferir o nosso site e baixar todas as apostilas, confire também todos os posts com dicas e tutoriais! 123456789123456789123456789
+        CFB Cursos, curso de JQuery, não deixe de conferir o nosso site e baixar todas as apostilas, confire também todos os posts com dicas e tutoriais! 123456789123456789123456789
+    </div>
+    
+    <script>
+        $('#bt_rolar_left').click(()=>{
+            $('#texto').scrollLeft(15)
+        })
+        $('#bt_rolar_top').click(()=>{
+            $('#texto').scrollTop(150)
+        })
+        $('#bt_posicao_left').click(()=>{
+            alert($('#texto').scrollLeft())
+        })
+        $('#bt_posicao_top').click(()=>{
+           alert($('#texto').scrollTop())
+        })
+        $('#bt_reset_pos').click(()=>{
+            $('#texto').scrollLeft(0).scrollTop(0)
+        })
+    </script>
+</body>
+</html>
