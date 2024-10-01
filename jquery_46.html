@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Wrap e Unwrap</title>
+    <style>
+        .pacote{
+            background-color: gold;
+            border: 3px solid blue;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .menu{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button id="bt_pacote">Empacotar / desempacotar</button>
+        <button id="bt_empacotar_tudo">Empacotar Tudo</button>
+        <button id="bt_empacotar_depois">Empacotar Depois</button>
+    </div>
+    
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    
+    <script>
+        let elementos_p = $('p')
+        $('#bt_pacote').click(()=>{
+            if(elementos_p.parent().is('div')){
+                elementos_p.unwrap()
+            }else{
+                elementos_p.wrap('<div class="pacote"></div>')
+            }
+        })
+        $('#bt_empacotar_tudo').click(()=>{
+            elementos_p.wrapAll('<div class="pacote"></div>')
+        })
+        $('#bt_empacotar_depois').click(()=>{
+            elementos_p.wrapInner('<div class="pacote"></div>')
+        })
+    </script>
+</body>
+</html>
