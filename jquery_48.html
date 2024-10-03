@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Função Get</title>
+    <style>
+        .caixa{
+            background-color: gold;
+            border: 3px solid blue;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button id="btn_get">Obter elementos</button>
+    </div>
+
+    <div id="elementos" class="caixa">
+        <!--  -->
+    </div>
+    
+    <p class="p" id="p1">CFB Cursos</p>
+    <p class="p" id="p2">Curso de JQuery</p>
+    <p class="p" id="p3">Função get()</p>
+    <p class="p" id="p4">www.cfbcursos.com.br</p>
+    <p class="p" id="p5">youtube.com/@cfbcursos</p>
+    
+    <script>
+        $('#btn_get').click(function () { 
+            let el = $('p').get()
+            $('#elementos').append(el)
+        });
+    </script>
+</body>
+</html>
