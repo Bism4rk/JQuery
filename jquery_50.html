@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Função No Conflict</title>
+    <style>
+        .caixa{
+            background-color: gold;
+            border: 3px solid blue;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa" class="caixa">
+        <h4 class="p" id="p1">CFB Cursos</h4>
+        <h4 class="p" id="p2">Curso de JQuery</h4>
+        <h4 class="p" id="p3">Função each()</h4>
+        <h4 class="p" id="p4">www.cfbcursos.com.br</h4>
+        <h4 class="p" id="p5">youtube.com/@cfbcursos</h4>
+    </div>
+    <p class="p" id="p11">CFB Cursos</p>
+    <p class="p" id="p22">Curso de JQuery</p>
+    <p class="p" id="p33">Função each()</p>
+    <p class="p" id="p44">www.cfbcursos.com.br</p>
+    <p class="p" id="p55">youtube.com/@cfbcursos</p>
+    
+    <script>
+        let cfb = $.noConflict()
+        cfb('h4').click(function(){
+            alert(cfb(this).index())
+        })
+        cfb('p').click((e)=>{
+            alert(cfb(e.currentTarget).index())
+        })
+    </script>
+</body>
+</html>
