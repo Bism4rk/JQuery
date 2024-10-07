@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Função Length</title>
+    <style>
+        .caixa{
+            background-color: gold;
+            border: 3px solid blue;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa1" class="caixa">
+        <h4 class="p" id="p1">CFB Cursos</h4>
+        <h4 class="p" id="p2">Curso de JQuery</h4>
+        <h4 class="p" id="p3">Função toArray()</h4>
+        <h4 class="p" id="p4">www.cfbcursos.com.br</h4>
+        <h4 class="p" id="p5">youtube.com/@cfbcursos</h4>
+        <h4 class="p" id="p6">BRUH</h4>
+    </div>
+
+    <button id="h4_para_caixa2">H4 para caixa 2</button>
+    <button id="p_para_caixa2">P para caixa 2</button>
+
+    <p class="p" id="p11">CFB Cursos</p>
+    <p class="p" id="p22">Curso de JQuery</p>
+    <p class="p" id="p33">Função toArray()</p>
+    <p class="p" id="p44">www.cfbcursos.com.br</p>
+    <p class="p" id="p55">youtube.com/@cfbcursos</p>
+
+    <div id="caixa2" class="caixa">
+        <!--  -->
+    </div>
+
+    <script>
+        let ep = $('p').toArray()
+        let eh4 = $('h4').toArray()
+        $('#h4_para_caixa2').click((e)=>{
+            $('#caixa2').append(ep)
+            $('#caixa1').append(eh4)
+        })
+        $('#p_para_caixa2').click((e)=>{
+            $('#caixa2').append(eh4)
+            $('#caixa1').append(ep)
+        })
+    </script>
+</body>
+</html>
