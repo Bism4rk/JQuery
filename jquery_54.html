@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Modificando as larguras e alturas dos elementos</title>
+    <style>
+        .caixa{
+            background-color: #ddd;
+            width: 200px;
+            height: 250px;
+            padding: 10px;
+            border: 5px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-style: italic;">SETANDO HEIGHT E WIDTH</h1>
+    <label for="altHeight">Height</label>
+    <input type="text" name="altHeight" id="altHeight">
+    <label for="altWidth">Width</label>
+    <input type="text" name="altWidth" id="altWidth">
+    <button id="btn_alt">Alterar</button>
+    <div style="display: flex;">
+        <div id="caixa1" class="caixa">
+            CFB Cursos
+        </div>
+        <div id="info" class="caixa">
+            <!--  -->
+        </div>
+        <!-- <img src="galant.jpg" alt="1970 Mitsubishi Galant GTO" width="550px"> -->
+    </div>
+
+    <script>
+        let cx = $('#caixa1')
+        $('#info').html(
+            `Width: ${cx.width()}px <br>` +
+            `Height: ${cx.height()}px <br>` + 
+            `innerWidth: ${cx.innerWidth()}px <br>` + 
+            `innerHeight: ${cx.innerHeight()}px <br>` + 
+            `outerWidth: ${cx.outerWidth(false)}px <br>` + 
+            `outerHeight: ${cx.outerHeight(false)}px <br>` + 
+            `outerWidth (true): ${cx.outerWidth(true)}px <br>` + 
+            `outerHeight (true): ${cx.outerHeight(true)}px <br>`
+        )
+        $('#btn_alt').click(()=>{
+            cx.width(altWidth.value)
+            cx.height(altHeight.value)
+            // cx.innerWidth()
+            $('#info').html(
+            `Width: ${cx.width()}px <br>` +
+            `Height: ${cx.height()}px <br>` + 
+            `innerWidth: ${cx.innerWidth()}px <br>` + 
+            `innerHeight: ${cx.innerHeight()}px <br>` + 
+            `outerWidth: ${cx.outerWidth(false)}px <br>` + 
+            `outerHeight: ${cx.outerHeight(false)}px <br>` + 
+            `outerWidth (true): ${cx.outerWidth(true)}px <br>` + 
+            `outerHeight (true): ${cx.outerHeight(true)}px <br>`
+            )
+        })
+    </script>
+</body>
+</html>
